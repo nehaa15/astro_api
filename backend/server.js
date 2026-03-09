@@ -75,6 +75,44 @@ app.get('/health', (req, res) => {
     });
 });
 
+// Landing page
+app.get("/", (req, res) => {
+    res.send(`
+    <h1>Astrology & Numerology API</h1>
+
+    <p><strong>Status:</strong> Running</p>
+
+    <h2>Available Endpoints</h2>
+
+    <ul>
+        <li><b>POST /generate-report</b> – Full astrology + numerology report</li>
+        <li><b>POST /kundali</b> – Generate Kundali (birth chart)</li>
+        <li><b>POST /numerology</b> – Generate numerology analysis</li>
+        <li><b>GET /health</b> – Health check</li>
+        <li><b>GET /api</b> – API information</li>
+    </ul>
+
+    <h2>Example Request</h2>
+
+    <pre>
+POST /generate-report
+
+Headers:
+x-api-key: astro-api-key-2024
+
+Body:
+{
+  "name": "Rahul",
+  "dob": "1996-05-10",
+  "time": "14:30",
+  "place": "Delhi"
+}
+    </pre>
+
+    <p>API running successfully</p>
+    `);
+});
+
 // API info endpoint
 app.get('/api', (req, res) => {
     res.json({
@@ -84,7 +122,7 @@ app.get('/api', (req, res) => {
             'POST /generate-report': 'Generate complete astrological report',
             'POST /kundali': 'Generate Kundali (birth chart) only',
             'POST /numerology': 'Generate numerology analysis only',
-            'GET /health': 'Health check'
+            'GET /health': 'Health check',
         }
     });
 });

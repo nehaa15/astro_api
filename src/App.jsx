@@ -3,7 +3,7 @@ import { useState } from "react";
 // ═══════════════════════════════════════════════════════════════════════════
 // API CONFIGURATION
 // ═══════════════════════════════════════════════════════════════════════════
-const API_URL = "https://astro-api-4b5p.onrender.com/";
+const API_URL = "https://astro-api-4b5p.onrender.com";
 const API_KEY = "astro-api-key-2024";
 
 // ═══════════════════════════════════════════════════════════════════════════
